@@ -37,4 +37,33 @@ def menu():
                 print("Has elegido no continuar")
         
         elif opcion=="3":
-            
+            print("Has elegido la opción 3, calcular vector")
+            op=input("¿desea continuar?(s/n)")
+            if op == "s":
+                db.Punto_menu.vector()
+            else:
+                print("Has elegido no continuar")
+        
+        elif opcion =="4":
+            print("Has elegido la opción 4, calcular distancias")
+            op=input("¿desea continuar?(s/n)")
+            if op == "s":
+                db.Punto_menu.distancia()
+            else:
+                print("Has elegido no continuar")
+
+        elif opcion == "5":
+            print("Has elegido la opción 5, crear rectángulo")
+            op=input("¿desea continuar?(s/n)")
+            if op == "s":
+                db.Punto_menu.rectangulo()
+            else:
+                print("Has elegido no continuar")
+        
+        elif opcion == "6":
+            print("Has elegido la opción 6, dibujar rectángulo")
+            op=input("¿desea continuar?(s/n)")
+            if op == "s":
+                db.Punto_menu.cuadrante()
+            else:
+                print("Has elegido no continuar")
