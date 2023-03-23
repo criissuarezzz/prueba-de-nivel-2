@@ -143,3 +143,30 @@ class Punto_menu():
     
     @staticmethod
     def mas_lejos():
+        x1 = input("Introduce la coordenada x del primer punto: ")
+        y1 = input("Introduce la coordenada y del primer punto: ")
+        x2 = input("Introduce la coordenada x del segundo punto: ")
+        y2 = input("Introduce la coordenada y del segundo punto: ")
+        x3 = input("Introduce la coordenada x del tercer punto: ")
+        y3 = input("Introduce la coordenada y del tercer punto: ")
+        origen=Punto(0, 0)
+        p1 = Punto(x1, y1)
+        p2 = Punto(x2, y2)
+        p3 = Punto(x3, y3)
+        distanciap1=p1.distancia(origen)
+        distanciap2=p2.distancia(origen)
+        distanciap3=p3.distancia(origen)
+
+        print("La distancia del punto {0} al origen es: {1}".format(p1, distanciap1))
+        print("La distancia del punto {0} al origen es: {1}".format(p2, distanciap2))
+        print("La distancia del punto {0} al origen es: {1}".format(p3, distanciap3))
+        
+        if distanciap1>distanciap2 and distanciap1>distanciap3:
+            print("El punto {} es el más lejano al origen".format(p1))
+        elif distanciap2>distanciap1 and distanciap2>distanciap3:
+            print("El punto {} es el más lejano al origen".format(p2))
+        elif distanciap3>distanciap1 and distanciap3>distanciap2:
+            print("El punto {} es el más lejano al origen".format(p3))
+
+    @staticmethod
+    def rectangulo()
