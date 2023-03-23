@@ -5,7 +5,7 @@ class Punto():
         self.x=x
         self.y=y
     def __str__(self):
-        return "Has creado el punto ({0}, {1})".format(self.x, self.y)
+        return "({0}, {1})".format(self.x, self.y)
     def cuadrante(self):
         if self.x>0 and self.y>0:
             return "El punto ({0}, {1}) está en el primer cuadrante".format(self.x, self.y)
@@ -54,3 +54,14 @@ print(cuadranteC())
 cuadranteD=D.cuadrante()
 print(cuadranteD)
 
+print('\033[35m'+ "LOS VECTORES " + '\033[0m')
+vectorAB=A.vector(B)
+print("El vector AB es:", vectorAB)
+vectorBA=B.vector(A)
+print("El vector BA es:", vectorBA)
+
+print('\033[35m'+ "DISTANCIAS" + '\033[0m')
+distanciaAB=A.distancia(B)
+print("La distancia de {0} a {1} es: {2}".format(A, B, distanciaAB))
+distanciaBA=B.distancia(A)
+print("La distancia entre {0} y {1}, es: {2}".format(B, A, distanciaBA))
