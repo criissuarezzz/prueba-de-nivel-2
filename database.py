@@ -19,4 +19,7 @@ class Punto:
     def vector(self, punto):
         return Punto(punto.x-self.x, punto.y-self.y)
     
+    def distancia(self, punto):
+        return math.sqrt(((punto.x-self.x)**2)+(punto.y-self.y)**2)
+    
     
