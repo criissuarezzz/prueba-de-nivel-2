@@ -65,6 +65,7 @@ class Punto_menu():
         y1=int(input("Introduce la coordenada y del primer punto:"))
         p1=Punto(x1, y1)
         print("El punto p1 es: {0}".format(p1))
+
         x2=int(input("Introduce la coordenada x del segundo punto:"))
         y2=int(input("Introduce la coordenada y del segundo punto:"))
         p2=Punto(x2, y2)
@@ -127,22 +128,24 @@ class Punto_menu():
     
     @staticmethod
     def dibujarRectangulo():
-        x1 = input("Introduce la coordenada x del primer punto: ")
-        y1 = input("Introduce la coordenada y del primer punto: ")
-        x2 = input("Introduce la coordenada x del segundo punto: ")
-        y2 = input("Introduce la coordenada y del segundo punto: ")
+        x1 = int(input("Introduce la coordenada x del primer punto: "))
+        y1 = int(input("Introduce la coordenada y del primer punto: "))
+        x2 = int(input("Introduce la coordenada x del segundo punto: "))
+        y2 = int(input("Introduce la coordenada y del segundo punto: "))
         p1 = Punto(x1, y1)
         p2 = Punto(x2, y2)
-        turtle.setup(400, 400)
-        turtle.setworldcoordinates(-10, -10, 10, 10)
-        turtle.penup()
-        turtle.goto(p1.x, p1.y)   #goto es para mover la flecha, y recorre todo el rectangulo en funcion de las coordenadas que le demos
-        turtle.pendown()
-        turtle.goto(p2.x, p1.y)
-        turtle.goto(p2.x, p2.y)
-        turtle.goto(p1.x, p2.y)
-        turtle.goto(p1.x, p1.y)
-        turtle.done()
+        def dibujarRectangulo(p1, p2):
+            turtle.setup(400, 400)
+            turtle.setworldcoordinates(-10, -10, 10, 10)
+            turtle.penup()
+            turtle.goto(p1.x, p1.y)   #goto es para mover la flecha, y recorre todo el rectangulo en funcion de las coordenadas que le demos
+            turtle.pendown()
+            turtle.goto(p2.x, p1.y)
+            turtle.goto(p2.x, p2.y)
+            turtle.goto(p1.x, p2.y)
+            turtle.goto(p1.x, p1.y)
+            turtle.done()
+        dibujarRectangulo(p1, p2)
 
     
 A= Punto(2,3)
