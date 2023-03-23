@@ -7,16 +7,16 @@ class Punto():
     def __str__(self):
         return "Has creado el punto ({0}, {1})".format(self.x, self.y)
     def cuadrante(self):
-        if self.x>0 & self.y>0:
-            return "El punto ({0}, {1}) está en el primer cuadrante"
-        elif self.x<0 & self.y>0:
-            return "El punto ({0}, {1}) está en el segundo cuadrante"
-        elif self.x<0 & self.y<0:
-            return "El punto ({0}, {1}) está en el tercer cuadrante"
-        elif self.x==0 & self.y==0:
-            return "El punto ({0}, {1}) está en el origen"
+        if self.x>0 and self.y>0:
+            return "El punto ({0}, {1}) está en el primer cuadrante".format(self.x, self.y)
+        elif self.x<0 and self.y>0:
+            return "El punto ({0}, {1}) está en el segundo cuadrante".format(self.x, self.y)
+        elif self.x<0 and self.y<0:
+            return "El punto ({0}, {1}) está en el tercer cuadrante".format(self.x, self.y)
+        elif self.x==0 and self.y==0:
+            return "El punto ({0}, {1}) está en el origen".format(self.x, self.y)
         else:
-            return "El punto ({0}, {1}) está en el cuarto cuadrante"
+            return "El punto ({0}, {1}) está en el cuarto cuadrante".format(self.x, self.y)
     
     def vector(self, punto):
         return Punto(punto.x-self.x, punto.y-self.y)
@@ -43,3 +43,14 @@ A= Punto(2,3)
 B=Punto(5, 5)
 C=Punto(-3, -1)
 D=Punto(0,0)
+
+print('\033[35m'+ "LOS CUADRANTES " + '\033[0m')
+cuadranteA=A.cuadrante
+print(cuadranteA())
+cuadranteB=B.cuadrante
+print(cuadranteB())
+cuadranteC=C.cuadrante
+print(cuadranteC())
+cuadranteD=D.cuadrante()
+print(cuadranteD)
+
