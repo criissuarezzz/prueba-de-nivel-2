@@ -99,3 +99,11 @@ turtle.goto(A.x, B.y)
 turtle.goto(A.x, A.y)
 turtle.done()   #trabajo terminado
 
+class Punto_menu():
+    @staticmethod
+    def crear_punto():
+        x=input("Introduce la coordenada x:")
+        y=input("Introduce la coordenada y:")
+        punto=Punto(x, y)
+        print("Has creado el punto ({0})".format(punto))
+    
