@@ -1,4 +1,6 @@
 import math
+import turtle
+
 
 class Punto():
     def __init__(self, x, y):
@@ -39,65 +41,7 @@ class Rectangulo:
         return self.base * self.altura
     
 
-A= Punto(2,3)
-B=Punto(5, 5)
-C=Punto(-3, -1)
-D=Punto(0,0)
 
-print('\033[35m'+ "LOS CUADRANTES " + '\033[0m')
-cuadranteA=A.cuadrante
-print(cuadranteA())
-cuadranteB=B.cuadrante
-print(cuadranteB())
-cuadranteC=C.cuadrante
-print(cuadranteC())
-cuadranteD=D.cuadrante()
-print(cuadranteD)
-
-print('\033[35m'+ "LOS VECTORES " + '\033[0m')
-vectorAB=A.vector(B)
-print("El vector AB es:", vectorAB)
-vectorBA=B.vector(A)
-print("El vector BA es:", vectorBA)
-
-print('\033[35m'+ "DISTANCIAS" + '\033[0m')
-distanciaAB=A.distancia(B)
-print("La distancia de {0} a {1} es: {2}".format(A, B, distanciaAB))
-distanciaBA=B.distancia(A)
-print("La distancia entre {0} y {1}, es: {2}".format(B, A, distanciaBA))
-
-print('\033[35m'+ "¿CUÁL ESTÁ MÁS LEJOS DEL ORIGEN? " + '\033[0m')
-distanciaAD=A.distancia(D)
-distanciaBD=B.distancia(D)
-distanciaCD=C.distancia(D)
-print("La distancia de A al origen es:", distanciaAD)
-print("La distancia de B al origen es:", distanciaBD)
-print("La distancia de C al origen es:", distanciaCD)
-if distanciaAD>distanciaBD and distanciaAD>distanciaCD:
-    print("El punto A es el más lejano al origen") 
-elif distanciaBD>distanciaAD and distanciaBD>distanciaCD:
-    print("El punto B es el más lejano al origen") 
-elif distanciaCD>distanciaAD and distanciaCD>distanciaBD:
-    print("El punto C es el más lejano al origen")
-
-print('\033[35m'+ "RECTÁNGULO" + '\033[0m')
-rect=Rectangulo(A,B)
-print("El rectángulo tiene una base {0}, y altura {1}".format(rect.base(), rect.altura()))
-
-print('\033[35m'+ "DIBUJAR EL RECTÁNGULO" + '\033[0m')
-import turtle
-turtle.setup(400, 400)
-#hacer el rectangulo mas grande y centrado
-turtle.setworldcoordinates(-10, -10, 10, 10)
-turtle.speed(1)
-turtle.penup()  #penup es para levantar el lapiz y no dibujar
-turtle.goto(A.x, A.y)   #goto (go to) es para mover la flecha, y recorre todo el rectangulo en funcion de las coordenadas que le demos
-turtle.pendown()  #pendown es para bajar el lapiz y dibujar
-turtle.goto(B.x, A.y)
-turtle.goto(B.x, B.y)
-turtle.goto(A.x, B.y)
-turtle.goto(A.x, A.y)
-turtle.done()   #trabajo terminado
 
 class Punto_menu():
     @staticmethod
@@ -109,10 +53,10 @@ class Punto_menu():
     
     @staticmethod
     def cuadrante():
-        x=input("Introduce la coordenada x:")
-        y=input("Introduce la coordenada y:")
+        x=int(input("Introduce la coordenada x:"))
+        y=int(input("Introduce la coordenada y:"))
         punto=Punto(x,y)
-        cuadrantep=Punto.cuadrante()
+        cuadrantep=Punto.cuadrante(punto)
         return cuadrantep
     
     @staticmethod
@@ -199,3 +143,61 @@ class Punto_menu():
         turtle.done()
 
     
+A= Punto(2,3)
+B=Punto(5, 5)
+C=Punto(-3, -1)
+D=Punto(0,0)
+
+print('\033[35m'+ "LOS CUADRANTES " + '\033[0m')
+cuadranteA=A.cuadrante
+print(cuadranteA())
+cuadranteB=B.cuadrante
+print(cuadranteB())
+cuadranteC=C.cuadrante
+print(cuadranteC())
+cuadranteD=D.cuadrante()
+print(cuadranteD)
+
+print('\033[35m'+ "LOS VECTORES " + '\033[0m')
+vectorAB=A.vector(B)
+print("El vector AB es:", vectorAB)
+vectorBA=B.vector(A)
+print("El vector BA es:", vectorBA)
+
+print('\033[35m'+ "DISTANCIAS" + '\033[0m')
+distanciaAB=A.distancia(B)
+print("La distancia de {0} a {1} es: {2}".format(A, B, distanciaAB))
+distanciaBA=B.distancia(A)
+print("La distancia entre {0} y {1}, es: {2}".format(B, A, distanciaBA))
+
+print('\033[35m'+ "¿CUÁL ESTÁ MÁS LEJOS DEL ORIGEN? " + '\033[0m')
+distanciaAD=A.distancia(D)
+distanciaBD=B.distancia(D)
+distanciaCD=C.distancia(D)
+print("La distancia de A al origen es:", distanciaAD)
+print("La distancia de B al origen es:", distanciaBD)
+print("La distancia de C al origen es:", distanciaCD)
+if distanciaAD>distanciaBD and distanciaAD>distanciaCD:
+    print("El punto A es el más lejano al origen") 
+elif distanciaBD>distanciaAD and distanciaBD>distanciaCD:
+    print("El punto B es el más lejano al origen") 
+elif distanciaCD>distanciaAD and distanciaCD>distanciaBD:
+    print("El punto C es el más lejano al origen")
+
+print('\033[35m'+ "RECTÁNGULO" + '\033[0m')
+rect=Rectangulo(A,B)
+print("El rectángulo tiene una base {0}, y altura {1}".format(rect.base(), rect.altura()))
+
+print('\033[35m'+ "DIBUJAR EL RECTÁNGULO" + '\033[0m')
+turtle.setup(400, 400)
+#hacer el rectangulo mas grande y centrado
+turtle.setworldcoordinates(-10, -10, 10, 10)
+turtle.speed(1)
+turtle.penup()  #penup es para levantar el lapiz y no dibujar
+turtle.goto(A.x, A.y)   #goto (go to) es para mover la flecha, y recorre todo el rectangulo en funcion de las coordenadas que le demos
+turtle.pendown()  #pendown es para bajar el lapiz y dibujar
+turtle.goto(B.x, A.y)
+turtle.goto(B.x, B.y)
+turtle.goto(A.x, B.y)
+turtle.goto(A.x, A.y)
+turtle.done()   #trabajo terminado
