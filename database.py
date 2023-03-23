@@ -179,4 +179,23 @@ class Punto_menu():
         rect = Rectangulo(p1, p2)
         return "El rectángulo tiene una base de {0} y una altura de {1}, uno de los vértices está en la coordenada {2}, y en diagonal encontramos el otro punto {3}".format(rect.base(), rect.altura(), p1, p2)
     
+    @staticmethod
+    def dibujarRectangulo():
+        x1 = input("Introduce la coordenada x del primer punto: ")
+        y1 = input("Introduce la coordenada y del primer punto: ")
+        x2 = input("Introduce la coordenada x del segundo punto: ")
+        y2 = input("Introduce la coordenada y del segundo punto: ")
+        p1 = Punto(x1, y1)
+        p2 = Punto(x2, y2)
+        turtle.setup(400, 400)
+        turtle.setworldcoordinates(-10, -10, 10, 10)
+        turtle.penup()
+        turtle.goto(p1.x, p1.y)   #goto es para mover la flecha, y recorre todo el rectangulo en funcion de las coordenadas que le demos
+        turtle.pendown()
+        turtle.goto(p2.x, p1.y)
+        turtle.goto(p2.x, p2.y)
+        turtle.goto(p1.x, p2.y)
+        turtle.goto(p1.x, p1.y)
+        turtle.done()
+
     
