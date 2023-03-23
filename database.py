@@ -61,13 +61,15 @@ class Punto_menu():
     
     @staticmethod
     def vector():
-        x1=("Introduce la coordenada x del primer punto:")
-        y1=("Introduce la coordenada y del primer punto:")
-        x2=("Introduce la coordenada x del segundo punto:")
-        y2=("Introduce la coordenada y del segundo punto:")
-
+        x1=int(input("Introduce la coordenada x del primer punto:"))
+        y1=int(input("Introduce la coordenada y del primer punto:"))
         p1=Punto(x1, y1)
+        print("El punto p1 es: {0}".format(p1))
+        x2=int(input("Introduce la coordenada x del segundo punto:"))
+        y2=int(input("Introduce la coordenada y del segundo punto:"))
         p2=Punto(x2, y2)
+        print("El punto p2 es: {0}".format(p2))
+        
         opcion=input('¿quieres saber el vector P1P2 o el P2P1?(P1P2/P2P1):')
         if opcion == "P1P2":
             return "El vector formado por {0} y {1} es: {2}".format(p1, p2, p1.vector(p2))
