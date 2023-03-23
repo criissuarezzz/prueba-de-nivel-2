@@ -65,3 +65,23 @@ distanciaAB=A.distancia(B)
 print("La distancia de {0} a {1} es: {2}".format(A, B, distanciaAB))
 distanciaBA=B.distancia(A)
 print("La distancia entre {0} y {1}, es: {2}".format(B, A, distanciaBA))
+
+print('\033[35m'+ "¿CUÁL ESTÁ MÁS LEJOS DEL ORIGEN? " + '\033[0m')
+distanciaAD=A.distancia(D)
+distanciaBD=B.distancia(D)
+distanciaCD=C.distancia(D)
+print("La distancia de A al origen es:", distanciaAD)
+print("La distancia de B al origen es:", distanciaBD)
+print("La distancia de C al origen es:", distanciaCD)
+if distanciaAD>distanciaBD and distanciaAD>distanciaCD:
+    print("El punto A es el más lejano al origen") 
+elif distanciaBD>distanciaAD and distanciaBD>distanciaCD:
+    print("El punto B es el más lejano al origen") 
+elif distanciaCD>distanciaAD and distanciaCD>distanciaBD:
+    print("El punto C es el más lejano al origen")
+
+print('\033[35m'+ "RECTÁNGULO" + '\033[0m')
+rect=Rectangulo(A,B)
+print("El rectángulo tiene una base {0}, y altura {1}".format(rect.base(), rect.altura()))
+print("El área del rectángulo es {0}".format(rect.area()))
+
