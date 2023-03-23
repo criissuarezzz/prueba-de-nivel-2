@@ -28,5 +28,8 @@ class Rectangulo:
         self.p2= p2
     
     def base(self):
-        return "La base del rectángulo es:", self.p1.distancia(Punto(self.p1.x, self.p2.x))
+        return self.p1.distancia(Punto(self.p2.x, self.p1.y))
+
+    def altura(self):
+        return self.p1.distancia(Punto(self.p1.x, self.p2.y))
     
