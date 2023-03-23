@@ -1,6 +1,6 @@
 import math
 
-class Punto:
+class Punto():
     def __init__(self, x, y):
         self.x=x
         self.y=y
@@ -11,8 +11,10 @@ class Punto:
             return "El punto ({0}, {1}) está en el primer cuadrante"
         elif self.x<0 & self.y>0:
             return "El punto ({0}, {1}) está en el segundo cuadrante"
-        elif self.x<0 % self.y<0:
+        elif self.x<0 & self.y<0:
             return "El punto ({0}, {1}) está en el tercer cuadrante"
+        elif self.x==0 & self.y==0:
+            return "El punto ({0}, {1}) está en el origen"
         else:
             return "El punto ({0}, {1}) está en el cuarto cuadrante"
     
@@ -33,3 +35,11 @@ class Rectangulo:
     def altura(self):
         return self.p1.distancia(Punto(self.p1.x, self.p2.y))
     
+    def area(self):
+        return self.base * self.altura
+    
+
+A= Punto(2,3)
+B=Punto(5, 5)
+C=Punto(-3, -1)
+D=Punto(0,0)
