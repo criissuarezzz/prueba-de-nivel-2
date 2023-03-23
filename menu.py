@@ -64,6 +64,15 @@ def menu():
             print("Has elegido la opción 6, dibujar rectángulo")
             op=input("¿desea continuar?(s/n)")
             if op == "s":
-                db.Punto_menu.cuadrante()
+                db.Punto_menu.dibujarRectangulo()
             else:
                 print("Has elegido no continuar")
+        
+        elif opcion =="7":
+            helpers.limpiar_pantalla()
+            print("····················")
+            print("   HASTA PRONTO")
+            print("····················")
+        
+        input(">>> Presiona ENTER para continuar<<<")
+        menu()
