@@ -21,5 +21,12 @@ class Punto:
     
     def distancia(self, punto):
         return math.sqrt(((punto.x-self.x)**2)+(punto.y-self.y)**2)
+
+class Rectangulo:
+    def __init__(self, p1, p2):
+        self.p1= p1
+        self.p2= p2
     
+    def base(self):
+        return "La base del rectángulo es:", self.p1.distancia(Punto(self.p1.x, self.p2.x))
     
