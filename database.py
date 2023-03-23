@@ -169,4 +169,14 @@ class Punto_menu():
             print("El punto {} es el más lejano al origen".format(p3))
 
     @staticmethod
-    def rectangulo()
+    def rectangulo():
+        x1 = input("Introduce la coordenada x del primer punto: ")
+        y1 = input("Introduce la coordenada y del primer punto: ")
+        x2 = input("Introduce la coordenada x del segundo punto: ")
+        y2 = input("Introduce la coordenada y del segundo punto: ")
+        p1 = Punto(x1, y1)
+        p2 = Punto(x2, y2)
+        rect = Rectangulo(p1, p2)
+        return "El rectángulo tiene una base de {0} y una altura de {1}, uno de los vértices está en la coordenada {2}, y en diagonal encontramos el otro punto {3}".format(rect.base(), rect.altura(), p1, p2)
+    
+    
