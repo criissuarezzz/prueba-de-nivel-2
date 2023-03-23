@@ -83,5 +83,19 @@ elif distanciaCD>distanciaAD and distanciaCD>distanciaBD:
 print('\033[35m'+ "RECTÁNGULO" + '\033[0m')
 rect=Rectangulo(A,B)
 print("El rectángulo tiene una base {0}, y altura {1}".format(rect.base(), rect.altura()))
-print("El área del rectángulo es {0}".format(rect.area()))
+
+print('\033[35m'+ "DIBUJAR EL RECTÁNGULO" + '\033[0m')
+import turtle
+turtle.setup(400, 400)
+#hacer el rectangulo mas grande y centrado
+turtle.setworldcoordinates(-10, -10, 10, 10)
+turtle.speed(1)
+turtle.penup()  #penup es para levantar el lapiz y no dibujar
+turtle.goto(A.x, A.y)   #goto (go to) es para mover la flecha, y recorre todo el rectangulo en funcion de las coordenadas que le demos
+turtle.pendown()  #pendown es para bajar el lapiz y dibujar
+turtle.goto(B.x, A.y)
+turtle.goto(B.x, B.y)
+turtle.goto(A.x, B.y)
+turtle.goto(A.x, A.y)
+turtle.done()   #trabajo terminado
 
