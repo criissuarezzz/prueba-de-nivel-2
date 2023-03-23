@@ -107,3 +107,23 @@ class Punto_menu():
         punto=Punto(x, y)
         print("Has creado el punto ({0})".format(punto))
     
+    @staticmethod
+    def cuadrante():
+        x=input("Introduce la coordenada x:")
+        y=input("Introduce la coordenada y:")
+        punto=Punto(x,y)
+        cuadrantep=Punto.cuadrante()
+        return cuadrantep
+    
+    @staticmethod
+    def vector():
+        x1=("Introduce la coordenada x del primer punto:")
+        y1=("Introduce la coordenada y del primer punto:")
+        x2=("Introduce la coordenada x del segundo punto:")
+        y2=("Introduce la coordenada y del segundo punto:")
+
+        p1=Punto(x1, y1)
+        p2=Punto(x2, y2)
+        return "El vector formado por {0} y {1} es: {2}".format(p1, p2, p1.vector(p2))
+    
+    
