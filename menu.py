@@ -15,3 +15,10 @@ def menu():
         print("        4. Calcular distancia")
         print("        5. Crear rectángulo")
         print("        6. Dibujar rectángulo")
+        print("        7. Salir")
+        print("·································")
+
+        opcion = input("Elige una opción: ")
+        helpers.limpiar_pantalla()
+        if opcion == 1:
+            
